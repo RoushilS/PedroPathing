@@ -188,6 +188,11 @@ public class PathBuilder {
         return output;
     }
 
+    public PathBuilder setLinearHeadingInterpolation() {
+        this.paths.get(paths.size() - 1).setLinearHeadingInterpolation(this.paths.get(paths.size() - 1).getPose(0).getHeading(), this.paths.get(paths.size() - 1).getPose(1).getHeading());
+        return this;
+    }
+
     /**
      * This sets a linear heading interpolation on the last Path added to the PathBuilder.
      *
